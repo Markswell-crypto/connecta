@@ -1,4 +1,4 @@
-#!/home/ogutu/development/code/connecta/connecta-isp/server/venv/bin/python
+#!/home/ogutu/development/code/connecta/server/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
