@@ -21,6 +21,11 @@ const Header = ({ currentUser, onLogin, onLogout }) => {
                   <a href="/" className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-900">Home</a>
                   <a href="/about" className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-900">About</a>
                   <a href="/profile" className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-900">Profile</a>
+                  {currentUser.role === 'admin' && (
+                    <a href="/admin" className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-900">
+                      Admin Dashboard
+                    </a>
+                  )}
                   <button 
                     onClick={handleLogout}
                     className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-900"
