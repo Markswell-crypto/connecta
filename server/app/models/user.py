@@ -9,6 +9,13 @@ class User(db.Model):
     password_hash = db.Column(db.String(128))
     role = db.Column(db.String(20), default='user')  # admin or user
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    # Relationships
+    subscriptions = db.relationship('Subscription', backref='user', lazy=True)
+    payments = db.relationship('Payment', backref='user', lazy=True)
+    devices = db.relationship('Device', backref='user', lazy=True)
+    sessions = db.relationship('Session', backref='user', lazy=True)
+    vouchers_used = db.relationship('Voucher', backref='used_by', lazy=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
